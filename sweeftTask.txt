@@ -1,0 +1,118 @@
+CREATE DATABASE SwrrftDigitalTask;
+USE SwrrftDigitalTask;
+
+CREATE TABLE Teachers(
+Id INT IDENTITY(1,1) PRIMARY KEY,
+FirstName nvarchar(255),
+Lastname nvarchar(255),
+GenderId int,
+Subject_Id int
+)
+INSERT INTO Teachers(
+FirstName,
+Lastname,
+GenderId,
+Subject_Id)
+VALUES(
+N'თორნიკე',
+N'ბასილაშვილი',
+1,
+1),
+(
+N'ლევან',
+N'დოლიაშვილი',
+1,
+2)
+
+
+
+CREATE TABLE Pupils(
+Id INT IDENTITY(1,1) PRIMARY KEY,
+FirstName nvarchar(255),
+Lastname nvarchar(255),
+GenderId int,
+class nvarchar(255)
+)
+
+INSERT INTO Pupils(
+FirstName,
+Lastname,
+GenderId)
+VALUES(
+N'გიორგი',
+N'ბასილაშვილი',
+1
+),
+(
+N'ლევან',
+N'დოლიაშვილი',
+1)
+
+
+
+CREATE TABLE Gender(
+Id INT IDENTITY(1,1) PRIMARY KEY,
+Gender nvarchar(255),
+)
+
+INSERT INTO Gender(Gender)
+VALUES(N'მამრობითი'),
+	  (N'მდედრობითი') 	
+
+CREATE TABLE Subjects(
+Id INT IDENTITY(1,1) PRIMARY KEY,
+Subject_name nvarchar(255)
+)
+
+INSERT INTO Subjects(Subject_name)
+VALUES(N'ქართული'),
+	  (N'მათემატიკა'),
+	  (N'ინგლისური')
+
+
+CREATE TABLE Pupils_Subjects(
+Id INT IDENTITY(1,1) PRIMARY KEY,
+Pupil_id int,
+Subject_id int
+)
+
+INSERT INTO Pupils_Subjects(Subject_id,
+Pupil_id)
+VALUES(1,1),(2,1)
+
+
+ALTER TABLE Teachers
+ADD CONSTRAINT fk_teachers_gender_id
+FOREIGN KEY (GenderId)
+REFERENCES Gender(id)
+
+ALTER TABLE Teachers
+ADD CONSTRAINT fk_teachers_subject_id
+FOREIGN KEY (Subject_Id)
+REFERENCES Subjects(id)
+
+
+ALTER TABLE Pupils
+ADD CONSTRAINT fk_pupil_gender_id
+FOREIGN KEY (GenderId)
+REFERENCES Gender(id)
+
+
+ALTER TABLE Pupils_Subjects
+ADD CONSTRAINT fk_pupil_Subject_id
+FOREIGN KEY (Pupil_id)
+REFERENCES Pupils(id)
+
+
+ALTER TABLE Pupils_Subjects
+ADD CONSTRAINT fk_Subject_id
+FOREIGN KEY (Subject_id)
+REFERENCES Subjects(id)
+
+
+SELECT t.FirstName, t.Lastname , t.Subject_Id FROM Teachers t
+INNER JOIN Pupils_Subjects ps 
+ON t.Subject_Id = ps.Subject_id 
+INNER JOIN Pupils pl 
+ON ps.Pupil_id = pl.Id
+WHERE pl.FirstName = N'გიორგი'
