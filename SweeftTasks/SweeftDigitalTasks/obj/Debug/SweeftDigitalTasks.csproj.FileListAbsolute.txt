@@ -1,0 +1,9 @@
+C:\Users\mr.zi\source\repos\SweeftDigitalTasks\SweeftDigitalTasks\bin\Debug\SweeftDigitalTasks.exe.config
+C:\Users\mr.zi\source\repos\SweeftDigitalTasks\SweeftDigitalTasks\bin\Debug\SweeftDigitalTasks.exe
+C:\Users\mr.zi\source\repos\SweeftDigitalTasks\SweeftDigitalTasks\bin\Debug\SweeftDigitalTasks.pdb
+C:\Users\mr.zi\source\repos\SweeftDigitalTasks\SweeftDigitalTasks\obj\Debug\SweeftDigitalTasks.csproj.CoreCompileInputs.cache
+C:\Users\mr.zi\source\repos\SweeftDigitalTasks\SweeftDigitalTasks\obj\Debug\SweeftDigitalTasks.exe
+C:\Users\mr.zi\source\repos\SweeftDigitalTasks\SweeftDigitalTasks\obj\Debug\SweeftDigitalTasks.pdb
+C:\Users\mr.zi\source\repos\SweeftDigitalTasks\SweeftDigitalTasks\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mr.zi\source\repos\SweeftDigitalTasks\SweeftDigitalTasks\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mr.zi\source\repos\SweeftDigitalTasks\SweeftDigitalTasks\obj\Debug\SweeftDigitalTasks.csproj.CopyComplete
